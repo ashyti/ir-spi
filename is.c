@@ -5,8 +5,6 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 
-#define DSIZE	67
-
 /*
 unsigned int b[DSIZE] = { 0xab, 0xab, 16, 40, 16, 40, 16, 40,
 			16, 15, 16, 15, 16, 14, 16, 15,
@@ -20,7 +18,7 @@ unsigned int b[DSIZE] = { 0xab, 0xab, 16, 40, 16, 40, 16, 40,
 };
 */
 
-unsigned int b[DSIZE] = { 171, 171, 22, 64, 22, 64, 22, 64,
+unsigned int b[67] = { 171, 171, 22, 64, 22, 64, 22, 64,
 			22, 21, 22, 21, 22, 20, 22, 21,
 			22, 21, 22, 64, 22, 64, 22, 64,
 			22, 21, 22, 21, 22, 21, 22, 21,
@@ -58,11 +56,11 @@ int main(void)
 		return -1;
 	}
 
-	n = write(fd, b, DSIZE * sizeof(unsigned int));
+	n = write(fd, b, sizeof(b));
 	if (n < 0) {
 		fprintf(stderr, "unable to write to the device\n");
 		ret = -1;
-	} else if (n != DSIZE) {
+	} else if (n != sizeof(b)) {
 		fprintf(stderr, "failed to write everything, wrote %ld instead\n", n);
 		ret = -1;
 	} else {
