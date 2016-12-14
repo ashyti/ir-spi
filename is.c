@@ -1,11 +1,9 @@
 #include <fcntl.h>
+#include <linux/lirc.h>
 #include <stdio.h>
 #include <stdint.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
-
-#define LIRC_SET_SEND_CARRIER		1074030867
-#define LIRC_SET_SEND_DUTY_CYCLE	1074030869
 
 #define DSIZE	67
 
