@@ -1,6 +1,6 @@
-SRC = is.c
-FLAGS = -g -Wall
 TARGET = is
+SRC = $(TARGET).c
+FLAGS = -g -Wall
 
 $(TARGET):
 	cc $(FLAGS) $(SRC) -o $(TARGET)
