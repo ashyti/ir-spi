@@ -1,0 +1,20 @@
+ir-spi testing program
+==================================================
+
+by Andi Shyti <andi.shyti@samsung.com> 
+
+Overview
+--------
+This testing program tests the drivers/media/rc/ir-spi.c driver. The ir-spi.c is
+a drives the IR LED device in the tm2/tm2e Samsung board.
+
+Build
+-----
+
+$ make
+$ ./is
+
+TODO
+----
+1. Connect it to the lirc library
+2. Add more codes
